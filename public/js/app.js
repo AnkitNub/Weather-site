@@ -10,16 +10,14 @@ Formb.addEventListener("submit", (e) => {
   msgone.textContent = "Loading...";
   msgtwo.textContent = "";
 
-  fetch("http://localhost:3000/weather?address=" + location).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.Error) {
-          msgone.textContent = data.Error;
-        } else {
-          msgone.textContent = data.Address;
-          msgtwo.textContent = data.Weather_report;
-        }
-      });
-    }
-  );
+  fetch("/weather?address=" + location).then((response) => {
+    response.json().then((data) => {
+      if (data.Error) {
+        msgone.textContent = data.Error;
+      } else {
+        msgone.textContent = data.Address;
+        msgtwo.textContent = data.Weather_report;
+      }
+    });
+  });
 });

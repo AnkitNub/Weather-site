@@ -26,14 +26,14 @@ app.get("", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.render("about", {
-    title: "So this is the brand new about section",
+    title: "About section",
     name: "AnkitNub",
   });
 });
 
 app.get("/help", (req, res) => {
   res.render("help", {
-    title: "So this is the brand new help section",
+    title: "Help section",
     name: "AnkitNub",
   });
 });
@@ -41,7 +41,7 @@ app.get("/help", (req, res) => {
 app.get("/weather", (req, res) => {
   if (!req.query.address) {
     return res.send({
-      Error: "Please provide a address",
+      Error: "Please provide an address",
     });
   }
 

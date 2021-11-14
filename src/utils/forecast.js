@@ -8,7 +8,7 @@ const forecast = (lat, long, callback) => {
       callback(response.body.error.info);
     } else {
       const data = response.body.current;
-      const msg = `The temperature is currently ${data.temperature} and their is a ${data.precip}% chance of rain`;
+      const msg = `The temperature is currently ${data.temperature}, but it feelslike ${data.feelslike}, their is a ${data.precip}% chance of rain and humidity is ${data.humidity}.`;
       callback(undefined, msg);
     }
   });
